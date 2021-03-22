@@ -1,0 +1,143 @@
+/*Versión Web*/
+@media (min-width: 801px) {
+    *{
+        padding: 0;
+        margin: 0;
+        color: white;
+        background-color: black;
+        background-size: cover;
+        font-style: italic;
+    }
+    
+    header{
+        height: 10vh;
+        background-color: black;
+    }
+    #myCarousel {
+            height: 700px;
+            width: 1330px;
+            align-content: center;
+    }
+    .carousel-inner img {
+        height: 200px;
+        width: 1730px;
+    }
+    .carousel-indicators {
+        border-radius: 5px;
+        width: 50px;
+    }
+    main{
+        height: 80vh;
+        background-image: url("../Img/Fondo_Pokeapi.jpg");
+    }
+    .contenedor {
+        text-align: center;
+        margin: 0 auto;
+        height: 200px;
+        width: 250px;
+        display: flex;
+        justify-content: left;
+        align-content: left;
+        flex-direction: column;
+    }
+    footer{
+        height: 10vh;
+        background-color: black;
+        color: white;
+    }
+    }
+    /*Versión Tablet*/
+    
+    @media (min-width: 401px) and (max-width: 800px){
+        *{
+        padding: 0;
+        margin: 0;
+        color: white;
+        background-color: black;
+        background-size: cover;
+        font-style: italic;
+    }
+    
+    header{
+        height: 10vh;
+        background-color: black;
+    }
+    #myCarousel {
+            height: 400px;
+            width: 840px;
+    }
+    .carousel-inner img {
+        height: 100px;
+        width: 840px;
+    }
+    .carousel-indicators {
+        border-radius: 5px;
+        width: 50px;
+    }
+    main{
+        height: 90vh;
+        background-image: url("../Img/Fondo_Pokeapi.jpg");
+    }
+    .contenedor {
+        text-align: center;
+        margin: 0 auto;
+        height: 200px;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    footer{
+        height: 10vh;
+        background-color: black;
+        color: white;
+    }
+    }
+    /*Versión Movil*/
+    @media (max-width: 400px){
+        *{
+            padding: 0;
+            margin: 0;
+            color: white;
+            background-color: black;
+            background-size: cover;
+            font-style: italic;
+        }
+        
+        header{
+            height: 10vh;
+            background-color: black;
+        }
+        #myCarousel {
+                height: 400px;
+                width: 400px;
+        }
+        .carousel-inner img {
+            height: 100px;
+            width: 400px;
+        }
+        .carousel-indicators {
+            border-radius: 5px;
+            width: 50px;
+        }
+        main{
+            height: 80vh;
+            background-image: url("../Img/Fondo_Pokeapi.jpg");
+        }
+        .contenedor {
+            text-align: center;
+            margin: 0 auto;
+            height: 200px;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        footer{
+            height: 5vh;
+            background-color: black;
+            color: white;
+        }
+        }

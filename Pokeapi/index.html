@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Img/Pokeball.png">
+    <title>PokeDexMex</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <style>
+         body{
+           background-image: url("Img/Fondo_Pokeapi.jpg");
+           overflow: hidden;
+           background-repeat: no-repeat;
+       }
+       .logo{
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+        width: 250px;
+        height: 100px;
+       }
+       .contenedor{
+           text-align: center;
+           margin: 0 auto;
+           height: 300px;
+           width: 350px;
+           display: flex;
+           justify-content: center;
+           align-content: center;
+           flex-direction: column;
+       }
+       .contenedor img {
+         background-image: url("Img/Pokeball.png");
+       }
+       .contenedor input{
+           text-align: center;
+           background-color: white;
+           color: black;
+       }
+       .contenedor button{
+           margin-top: 20px;
+           margin-bottom: -30px;
+       }
+       .pokemon{
+           width: 150px;
+           height: 150px;
+           margin: 40px auto;
+           display: inline-block;
+       }
+       p{
+           margin-top: -60px;
+       }
+    </style>
+</head>
+<h1>PokeDexMex. La mejor pokedex de america latina.</h1>
+<body>
+  
+
+
+<div class="contenedor">
+  <h1>PokeDexMex. La mejor pokedex de america latina.</h1>
+    <input type="text" id="caja" placeholder="Ingrese Un Numero">
+    <button class="text-white btn bg-danger" id="button">Buscar</button>
+    <img src="" id="img" class="pokemon" alt="">
+    <p id="info" class="text-white"></p>
+    
+</div>
+
+    <script>
+        let buton=document.getElementById('button')
+
+        buton.addEventListener('click',()=>{
+            let caja=document.getElementById('caja').value
+            let img=document.getElementById('img')
+            let p=document.getElementById('info')
+            let xhttp=new XMLHttpRequest()
+            xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${caja}`)
+            xhttp.send()
+
+            xhttp.onreadystatechange=function () {
+                if(this.readyState==4 && this.status==200)
+                {
+                let datoPokemon=JSON.parse( this.responseText)
+                console.log(datoPokemon)
+                img.setAttribute("src",datoPokemon.sprites.front_default)
+                p.textContent=datoPokemon.name
+                }
+            }
+
+        })
+    </script>
+     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicadores -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+    
+      <!-- Imagenes e información del carrusel -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="Img/Fondo_1.jpg" alt="Chania">
+        </div>
+    
+        <div class="item">
+          <img src="Img/Fondo_2.jpg" alt="Chicago">
+        </div>
+    
+        <div class="item">
+          <img src="Img/Fondo_3.jpg" alt="New York">
+        </div>
+      </div>
+    
+      <!-- Botones de derecha e izquierda -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Adelante</span>
+      </a>
+    </div>
+   
+</body>
+<footer>
+  <h3>Felipe Escobedo Botello                   Derechos Reservados®</h3>
+</footer>
+</html>
